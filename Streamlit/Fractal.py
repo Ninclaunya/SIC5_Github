@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 
-
 # Interactive Streamlit elements, like these sliders, return their value.
 # This gives you an extremely simple interaction model.
 iterations = st.sidebar.slider("Level of detail", 2, 20, 10, 1)
@@ -29,7 +28,7 @@ for frame_num, a in enumerate(np.linspace(0.0, 4 * np.pi, 100)):
     c = separation * np.exp(1j * a)
     Z = np.tile(x, (n, 1)) + 1j * np.tile(y, (1, m))
     C = np.full((n, m), c)
-    M: Any = np.full((n, m), True, dtype=bool)
+    M  = np.full((n, m), True, dtype=bool)
     N = np.zeros((n, m))
 
     for i in range(iterations):
